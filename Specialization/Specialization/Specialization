@@ -1,0 +1,83 @@
+Here's a representation of the specialization/generalization hierarchy:
+
+
+*Entity Hierarchy:*
+
+- Student (Generalization/Superclass)
+    - Registration Number
+    - Name
+
+- Undergraduate (Specialization/Subclass of Student)
+    - Course Work Points
+
+- Postgraduate (Specialization/Subclass of Student)
+    - Supervisor
+
+
+*Specialization/Generalization Relationship:*
+
+Student
+
+- Has many Undergraduates (one-to-many)
+- Has many Postgraduates (one-to-many)
+
+
+Undergraduate
+
+- Is-a Student (inheritance)
+- Accumulates Course Work Points
+
+
+Postgraduate
+
+- Is-a Student (inheritance)
+- Has a Supervisor
+
+
+*ERD Diagram:*
+```
++---------------+
+|     Student   |
++---------------+
+|  Registration  |
+|  Number       |
+|  Name          |
++---------------+
+       |
+       | 1:N
+       v
++---------------+       +---------------+
+| Undergraduate |       | Postgraduate  |
++---------------+       +---------------+
+|  Course Work  |       |  Supervisor   |
+|  Points       |       +---------------+
++---------------+
+```
+
+
+*UML Class Diagram:*
+```
++---------------+
+|     Student   |
++---------------+
+| - registration |
+|   Number: string|
+| - name: string  |
++---------------+
+       |
+       | 1..*
+       v
++---------------+       +---------------+
+| Undergraduate |       | Postgraduate  |
++---------------+       +---------------+
+| - courseWork  |       | - supervisor  |
+|   Points: int |       +---------------+
++---------------+
+```
+This hierarchy shows that:
+
+
+- Student is the generalization/superclass.
+- Undergraduate and Postgraduate are specializations/subclasses.
+- Undergraduates accumulate course work points.
+- Postgraduates have supervisors.
