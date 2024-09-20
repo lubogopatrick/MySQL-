@@ -1,0 +1,170 @@
+[9/20, 11:19 PM] Meta AI: _Database Programming Concepts_
+
+
+*Database Types*
+
+1. Relational (RDBMS)
+2. NoSQL
+3. Object-Oriented
+4. Graph
+
+
+*Database Management Systems (DBMS)*
+
+1. MySQL
+2. PostgreSQL
+3. Microsoft SQL Server
+4. MongoDB
+5. Cassandra
+
+
+*Programming Languages*
+
+1. SQL
+2. Python
+3. Java
+4. C#
+5. JavaScript
+
+
+*Database Programming Techniques*
+
+1. CRUD (Create, Read, Update, Delete)
+2. Query Optimization
+3. Transaction Management
+4. Data Modeling
+5. Database Security
+
+
+*Database Tools and Libraries*
+
+1. ORM (Object-Relational Mapping)
+2. Database Drivers
+3. Query Builders
+4. Database Migration Tools
+
+
+*Database Design*
+
+1. Entity-Relationship Diagrams (ERD)
+2. Normalization
+3. Denormalization
+4. Database Schema
+
+
+*Database Security*
+
+1. Authentication
+2. Authorization
+3. Encryption
+4. Access Control
+
+
+*SQL Commands*
+
+1. CREATE
+2. DROP
+3. INSERT
+4. UPDATE
+5. DELETE
+6. SELECT
+7. JOIN
+8. INDEX
+
+
+*NoSQL Database Solutions*
+
+1. MongoDB
+2. Cassandra
+3. Redis
+4. RavenDB
+5. Couchbase
+
+*Database Programming Examples*
+
+Python (MySQL):
+```
+import mysql.connector
+cnx = mysql.connector.connect(...)
+cursor = cnx.cursor()
+cursor.execute("SELECT * FROM customers")
+results = cursor.fetchall()
+```
+
+Java (JDBC):
+```
+Connection conn = DriverManager.getConnection(...);
+Statement stmt = conn.createStatement();
+ResultSet rs = stmt.executeQuery("SELECT * FROM customers");
+```
+
+JavaScript (Node.js):
+```
+const mysql = require('mysql');
+const conn = mysql.createConnection(...);
+conn.query("SELECT * FROM customers", (err, results) => {
+  console.log(results);
+});
+```
+
+*SQL Query Types*
+1. SELECT: Retrieves data from a database table.
+2. INSERT: Adds new data to a database table.
+3. UPDATE: Modifies existing data in a database table.
+4. DELETE: Deletes data from a database table.
+5. JOIN: Combines data from multiple tables.
+6. SUBQUERY: Nested query within another query.
+
+
+*SQL Query Examples*
+
+
+1. Simple SELECT query:
+```
+SELECT * FROM customers;
+```
+
+1. SELECT with conditions:
+```
+SELECT * FROM customers WHERE country='USA';
+```
+
+1. INSERT query:
+```
+INSERT INTO customers (name, email) VALUES ('John Doe', 'john@example.com');
+```
+
+1. UPDATE query:
+```
+UPDATE customers SET name='Jane Doe' WHERE id=1;
+```
+
+1. DELETE query:
+```
+DELETE FROM customers WHERE id=1;
+```
+
+1. INNER JOIN query:
+```
+SELECT * FROM customers INNER JOIN orders ON (link unavailable)=orders.customer_id;
+```
+
+
+*SQL Query Clauses*
+
+
+1. WHERE: Filters data based on conditions.
+2. GROUP BY: Groups data by one or more columns.
+3. HAVING: Filters grouped data.
+4. ORDER BY: Sorts data in ascending or descending order.
+5. LIMIT: Limits the number of rows returned.
+
+
+*SQL Query Functions*
+
+
+1. SUM: Calculates the sum of a column.
+2. AVG: Calculates the average of a column.
+3. MAX: Returns the maximum value in a column.
+4. MIN: Returns the minimum value in a column.
+5. COUNT: Returns the number of rows in a column.
