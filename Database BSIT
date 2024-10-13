@@ -1,0 +1,137 @@
+
+*Query 1: Create database and activate it*
+
+CREATE DATABASE BSIT2;
+USE BSIT2;
+
+
+*Query 2: Create tables*
+
+CREATE TABLE dept (
+  DID VARCHAR(4) PRIMARY KEY,
+  DNAME VARCHAR(20),
+  LOCATION VARCHAR(20)
+);
+
+CREATE TABLE employee (
+  EID VARCHAR(4),
+  ENAME VARCHAR(20),
+  DESIGNATION VARCHAR(20),
+  SALARY DECIMAL(10, 2),
+  DID VARCHAR(4)
+);
+
+
+*Query 3: Insert values into dept table*
+
+INSERT INTO dept (DID, DNAME, LOCATION)
+VALUES 
+('D001', 'SALES', 'KLA'),
+('D002', 'PRO', 'EBBS'),
+('D003', 'IT', 'MKNO'),
+('D004', 'LAW', 'KLA');
+
+
+*Query 4: Insert values into employee table*
+
+INSERT INTO employee (EID, ENAME, DESIGNATION, SALARY, DID)
+VALUES 
+('E01', 'PETER', 'CLERK', 23000, 'D001'),
+('E02', 'MARY', 'MANAGER', 30000, 'D001'),
+('E03', 'HENRY', 'CLEANER', 15000, 'D002'),
+('E04', 'JANE', NULL, NULL, 'D003'),
+('E05', NULL, 'MANAGER', 28000, 'D001');
+
+
+*Query 5: Enforce Entity Integrity*
+
+ALTER TABLE employee
+ADD CONSTRAINT PK_EID PRIMARY KEY (EID);
+
+
+*Query 6: Enforce Referential Integrity*
+
+ALTER TABLE employee
+ADD CONSTRAINT FK_DID FOREIGN KEY (DID) REFERENCES dept(DID);
+
+
+*Query 7: Relational schema of employee table*
+
+DESCRIBE employee;
+
+
+*Query 8: Update Ename of EID E005*
+
+UPDATE employee
+SET ENAME = 'JAMIL'
+WHERE EID = 'E005';
+
+
+*Query 9: Increase salaries of Managers*
+
+UPDATE employee
+SET SALARY = SALARY * 1.12
+WHERE DESIGNATION = 'MANAGER';
+
+
+*Query 10: Rename EID column*
+
+ALTER TABLE employee
+RENAME COLUMN EID TO EMP_ID;
+
+
+*Query 11: Add Age attribute*
+
+ALTER TABLE employee
+ADD COLUMN AGE INT AFTER DESIGNATION;
+
+
+*Query 12: Left Outer Join*
+
+SELECT *
+FROM employee
+LEFT OUTER JOIN dept
+ON employee.DID = dept.DID;
+
+
+*Query 13: Horizontal and vertical view*
+
+SELECT 'Horizontal View' AS VIEW_TYPE, *
+FROM employee
+UNION ALL
+SELECT 'Vertical View' AS VIEW_TYPE, EID, ENAME
+FROM employee;
+
+
+*Query 14: Conditional statement with alias*
+
+SELECT EID, ENAME, SALARY,
+CASE
+  WHEN SALARY > 25000 THEN 'Executive'
+  WHEN SALARY BETWEEN 20000 AND 25000 THEN 'Intermediate'
+  ELSE 'Junior'
+END AS Salary_comment
+FROM employee;
+
+
+*Query 15: Check and Default constraints*
+
+-- Query 15.1: Check constraint for salary range
+ALTER TABLE employee
+ADD CONSTRAINT CHK_SALARY CHECK (SALARY BETWEEN 15000 AND 50000);
+
+-- Query 15.2: Default constraint for designation
+ALTER TABLE employee
+ALTER COLUMN DESIGNATION SET DEFAULT 'CLERK';
+
+-- Query 15.3: Check constraint for age range
+ALTER TABLE employee
+ADD CONSTRAINT CHK_AGE CHECK (AGE BETWEEN 18 AND 65);
+
+-- Query 15.4: Default constraint for location
+ALTER TABLE dept
+ALTER COLUMN LOCATION SET DEFAULT 'KLA';
+
+-- Query 15.5: Check constraint for DID format
+ALTER TABLE employee
+ADD CONSTRAINT CHK_DID FORMAT (DID LIKE 'D[0-9][0-9][0-9]');
