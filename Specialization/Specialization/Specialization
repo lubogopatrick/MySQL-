@@ -14,7 +14,7 @@ Here's a representation of the specialization/generalization hierarchy:
     - Supervisor
 
 
-*Specialization/Generalization Relationship:*
+^Specialization/Generalization Relationship:*
 
 Student
 
@@ -50,7 +50,7 @@ Postgraduate
 | Undergraduate |       | Postgraduate  |
 +---------------+       +---------------+
 |  Course Work  |       |  Supervisor   |
-|  Points       |       +---------------+
+|  Point       |       +---------------+
 +---------------+
 ```
 
