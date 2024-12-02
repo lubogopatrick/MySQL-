@@ -2,29 +2,30 @@ MySQL is a popular open-source relational database management system (RDBMS) use
 
 *Basic Concepts:*
 
-1. *Databases*: A collection of related tables.
-2. *Tables*: A collection of related data in rows and columns.
-3. *Columns*: Vertical lists of data in a table.
-4. *Rows*: Horizontal lists of data in a table.
-5. *Primary Key*: A unique identifier for each row in a table.
-6. *Foreign Key*: A field that links to the primary key of another table.
+1. *Databases: A collection of related tables.
+2. *Tables: A collection of related data in rows and columns.
+3. *Columns, Vertical lists of data in a table.
+4. *Rows, Horizontal lists of data in a table.
+5. *Primary Key, A unique identifier for each row in a table.
+6. *Foreign Key,A field that links to the primary key of another table.
 
-*Basic Commands:*
+Basic Commands:
 
-1. *CREATE*: Create a new database, table, or index.
+1. CREATE, Create a new database, table, or index.
 Example: `CREATE DATABASE mydb;`
-2. *INSERT*: Add new data to a table.
+2. insert: Add new data to a table.
 Example: `INSERT INTO mytable (name, age) VALUES ('John', 30);`
-3. *SELECT*: Retrieve data from a table.
-Example: `SELECT * FROM mytable;`
-4. *UPDATE*: Modify existing data in a table.
+3. SELECT: Retrieve data from a table.
+
+Example: `SELECT FROM mytable;`
+4. UPDATE: Modify existing data in a table.
 Example: `UPDATE mytable SET age = 31 WHERE name = 'John';`
-5. *DELETE*: Delete data from a table.
+5. *DELETE: Delete data from a table.
 Example: `DELETE FROM mytable WHERE name = 'John';`
-6. *DROP*: Delete a table or database.
+6. *DROP, Delete a table or database.
 Example: `DROP TABLE mytable;`
 
-*Other Useful Commands:*
+*Other Useful Commands:
 
 1. *ALTER*: Modify the structure of a table.
 Example: `ALTER TABLE mytable ADD COLUMN email VARCHAR(255);`
