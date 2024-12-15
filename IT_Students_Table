@@ -20,3 +20,4 @@ MySQL> select* from IT_students;
 MySQL> insert into results values(1224,54,26,12);
 MySQL> update registration set First name= "OGO" WHERE Regno=1224;
 MySQL> select* from registration;
+desc*from IT students;
